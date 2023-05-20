@@ -30,7 +30,7 @@ app.add_middleware(
 
 pydantic.json.ENCODERS_BY_TYPE[ObjectId] = str
 
-client = motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://gawaynewright10:<Engineering101>@cluster0.tuh2lv9.mongodb.net/")
+client = motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://gawaynewright10:<RFOWLlQnLSfSYZ9x>@cluster0.mzrx4mq.mongodb.net/")
 db = client.iot_platform
 Sensor_Data = db['Sensor_Data']
 data = db['data']
