@@ -17,12 +17,11 @@ origins = [
     "https://simple-smart-hub-client.netlify.app",
     "http://127.0.0.1:8000",
     "https://gw-ecse3038-iot-project.onrender.com"
-
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -31,7 +30,7 @@ app.add_middleware(
 
 pydantic.json.ENCODERS_BY_TYPE[ObjectId] = str
 
-client = motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://gawaynewright10:RFOWLlQnLSfSYZ9x@cluster0.mzrx4mq.mongodb.net/")
+client = motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://gawaynewright10:iot_project2023@cluster0.3o0prkf.mongodb.net/")
 db = client.iot_platform
 Sensor_Data = db['Sensor_Data']
 data = db['data']
