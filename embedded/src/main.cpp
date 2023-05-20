@@ -50,7 +50,7 @@ void loop() {
     HTTPClient http;
   
     // Establish a connection to the server
-    String url = "https://" + String(endpoint) + "/temperature";
+    String url = "https://" + String(endpoint) + "/parameters";
     http.begin(url);
     http.addHeader("Content-type", "application/json");
 
@@ -73,7 +73,7 @@ void loop() {
     serializeJson(docput, httpRequestData);
 
     // Send HTTP PUT request
-    int httpResponseCode = http.PUT(httpRequestData);
+    int httpResponseCode = http.POST(httpRequestData);
     String http_response;
 
     // check reuslt of PUT request. negative response code means server wasn't reached
